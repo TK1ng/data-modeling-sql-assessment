@@ -7,14 +7,14 @@ function handleSubmit(e) {
     e.preventDefault()
 
     if (nameInput.value < 1) {
-        alert ('You must enter a city name')
+        alert('You must enter a city name')
         return
     }
 
     let userRating = document.querySelector('input[name="rating"]:checked').value
     let body = {
-        name: nameInput.value, 
-        rating: +userRating, 
+        name: nameInput.value,
+        rating: +userRating,
         countryId: +countrySelect.value
     }
 
