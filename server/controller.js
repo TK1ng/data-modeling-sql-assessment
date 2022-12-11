@@ -248,7 +248,7 @@ module.exports = {
             insert into cities (name, rating, country_id)
             values ('${name}', '${rating}', '${countryId}');
         `)
-            .then(dbRes => {
+            .then(() => {
                 res.status(200);
             })
             .catch(err => console.error(err));
