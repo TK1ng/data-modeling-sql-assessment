@@ -248,8 +248,8 @@ module.exports = {
             insert into cities (name, rating, country_id)
             values ('${name}', '${rating}', '${countryId}');
         `)
-            .then(() => {
-                res.status(200);
+            .then(dbRes => {
+                res.status(200).send(dbRes[0]);
             })
             .catch(err => console.error(err));
     },
@@ -271,8 +271,8 @@ module.exports = {
             delete from cities
             where city_id = '${id}';
         `)
-            .then(() => {
-                res.sendStatus(204);
+            .then(dbRes => {
+                res.sendStatus(204).send(dbRes[0]);
             })
             .catch(err => console.error(err))
     }
