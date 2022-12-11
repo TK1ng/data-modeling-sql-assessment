@@ -271,5 +271,9 @@ module.exports = {
             delete from cities
             where city_id = '${id}';
         `)
+            .then(() => {
+                res.sendStatus(204);
+            })
+            .catch(err => console.error(err))
     }
 }
