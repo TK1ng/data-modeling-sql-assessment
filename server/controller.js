@@ -31,12 +31,6 @@ module.exports = {
                 country_id integer references countries(country_id)
             );
 
-            insert into cities (name, rating, country_id)
-            values ('Destin', '3', (select country_id from countries where name = 'United States of America' )),
-            ('Tulum', '4', (select country_id from countries where name = 'Mexico' )),
-            ('Nassau', '4', (select country_id from countries where name = 'Bahamas' ));
-
-
             insert into countries (name)
             values ('Afghanistan'),
             ('Albania'),
@@ -233,6 +227,11 @@ module.exports = {
             ('Yemen'),
             ('Zambia'),
             ('Zimbabwe');
+            
+            insert into cities (name, rating, country_id)
+            values ('Destin', '3', (select country_id from countries where name = 'United States of America' )),
+            ('Tulum', '4', (select country_id from countries where name = 'Mexico' )),
+            ('Nassau', '4', (select country_id from countries where name = 'Bahamas' ));
         `).then(() => {
             console.log('DB seeded!')
             res.sendStatus(200)
